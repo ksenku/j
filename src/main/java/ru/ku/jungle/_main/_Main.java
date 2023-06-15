@@ -6,9 +6,7 @@ public class _Main {
     public static void main(String[] args) {
         Snake snake = new Snake();
         EventManager eventManager = new EventManager();
-        eventManager.startEvents(snake);
-
-
+        eventManager.eventStarter(snake);
 
     }
 }
