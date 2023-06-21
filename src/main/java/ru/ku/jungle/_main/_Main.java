@@ -7,6 +7,5 @@ public class _Main {
         Snake snake = new Snake();
         EventManager eventManager = new EventManager();
         eventManager.eventStarter(snake);
-
     }
 }

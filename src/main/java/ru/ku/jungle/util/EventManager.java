@@ -15,7 +15,6 @@ public class EventManager {
     //грелась на солнце  +10 энергии (91-100)
 
     public void eventStarter(Snake snake) {
-        Math.random();
         while (statusChecker(snake)) {
             int eventVariant = (int) (Math.random() * 100);
             if (eventVariant >= 0 && eventVariant < 21) {
@@ -39,7 +38,9 @@ public class EventManager {
             } else if (eventVariant >= 91 && eventVariant <= 100) {
                 snakeBaskInTheSun(snake);
             }
-        } System.out.println("Snake is dead!:( The End!");
+        }
+
+        System.out.println("Snake is dead!:( The End!");
     }
 
     private void snakeSleep(Snake snake) {
@@ -49,6 +50,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake slept! + 20 energy");
     }
+
     private void snakeEatEgg(Snake snake) {
         int energy = snake.getEnergy();
         int health = snake.getHealth();
@@ -59,6 +61,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake ate an egg! - 15 energy");
     }
+
     private void snakeEatFrog(Snake snake) {
         int energy = snake.getEnergy();
         int health = snake.getHealth();
@@ -69,6 +72,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake ate a frog! - 20 energy");
     }
+
     private void snakeCrawl(Snake snake) {
         int energy = snake.getEnergy();
         energy = energy - 20;
@@ -76,6 +80,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake crawled! - 20 energy");
     }
+
     private void snakeSwim(Snake snake) {
         int energy = snake.getEnergy();
         energy = energy - 10;
@@ -83,6 +88,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake swam! - 10 energy");
     }
+
     private void snakeHunt(Snake snake) {
         int energy = snake.getEnergy();
         energy = energy - 30;
@@ -90,6 +96,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake hunted! - 30 energy");
     }
+
     private void snakeEscapeMongoose(Snake snake) {
         int energy = snake.getEnergy();
         energy = energy - 50;
@@ -97,6 +104,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake escaped from the mongoose! - 50 energy");
     }
+
     private void snakeEscapeHedgehog(Snake snake) {
         int energy = snake.getEnergy();
         energy = energy - 40;
@@ -104,6 +112,7 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake escaped from the hedgehog! - 40 energy");
     }
+
     private void snakeScareTourists(Snake snake) {
         int energy = snake.getEnergy();
         energy = energy - 25;
@@ -111,13 +120,15 @@ public class EventManager {
         healthModifier(snake);
         System.out.println("Snake scared tourists! - 25 energy");
     }
+
     private void snakeBaskInTheSun(Snake snake) {
         int energy = snake.getEnergy();
-        energy = energy + 20;
+        energy = energy + 10;
         snake.setEnergy(energy);
         healthModifier(snake);
-        System.out.println("Snake basked in the sun! + 20 energy");
+        System.out.println("Snake basked in the sun! + 10 energy");
     }
+
     private boolean statusChecker(Snake snake) {
         System.out.println("health: " + snake.getHealth() + ", energy: " + snake.getEnergy());
         if (snake.getHealth() == 0) {
@@ -126,21 +137,22 @@ public class EventManager {
             return true;
         }
     }
+
     private void healthModifier(Snake snake) {
         int health = snake.getHealth();
         if (snake.getEnergy() <= 0) {
             health = health - 20;
         }
-        snake.setHealth(health);
 
+        snake.setHealth(health);
         int energy = snake.getEnergy();
         if (snake.getEnergy() < 0) {
             energy = 0;
         } else if (snake.getEnergy() > 100) {
             energy = 100;
         }
-        snake.setEnergy(energy);
 
+        snake.setEnergy(energy);
         if (snake.getHealth() < 0) {
             health = 0;
         } else if (snake.getHealth() > 100) {
