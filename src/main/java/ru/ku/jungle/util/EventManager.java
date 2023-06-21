@@ -39,7 +39,6 @@ public class EventManager {
                 snakeBaskInTheSun(snake);
             }
         }
-
         System.out.println("Snake is dead!:( The End!");
     }
 
@@ -143,7 +142,6 @@ public class EventManager {
         if (snake.getEnergy() <= 0) {
             health = health - 20;
         }
-
         snake.setHealth(health);
         int energy = snake.getEnergy();
         if (snake.getEnergy() < 0) {
@@ -151,7 +149,6 @@ public class EventManager {
         } else if (snake.getEnergy() > 100) {
             energy = 100;
         }
-
         snake.setEnergy(energy);
         if (snake.getHealth() < 0) {
             health = 0;
@@ -160,5 +157,4 @@ public class EventManager {
         }
         snake.setHealth(health);
     }
-
 }
