@@ -14,18 +14,14 @@ public class Snake {
     }
 
     public void setEnergy(int energy) {
-
         this.energy = energy;
     }
 
     public int getEnergy() {
-
         return this.energy;
     }
 
     public double getPreyEnergyFactor() {
-
         return this.preyEnergyFactor;
     }
-
 }
